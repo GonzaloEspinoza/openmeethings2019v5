@@ -28,5 +28,6 @@ services:
       ENV DB2_J_VER: 11.1.4.4
       ENV PORTS: 5443
       
-    
+    volumes:
+      - ./path3:/var/lib/mysql
 
