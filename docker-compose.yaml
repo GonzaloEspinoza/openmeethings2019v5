@@ -1,0 +1,32 @@
+#docker-compose -f docker/dev/docker-compose.yml up
+version: '3.1'
+services:
+  blog:
+    image: vgbewonyo/openmeetings-docker
+    ports:
+        - 1935:1935 
+        - 5080:5080 
+        - 8081:8081 
+        - 5443:5443
+    environment: 
+      ENV DB_ROOT_PASS: '12345'
+      ENV OM_USER: om_admin
+      ENV OM_PASS: 1Q2w3e4r5t^y
+      ENV DAEMON_USER: nobody
+      ENV DAEMON_UID: 65534
+      ENV OM_DB_NAME: openmeetings
+      ENV OM_DB_TYPE: mysql
+      ENV OM_DB_HOST: localhost
+      ENV OM_DB_PORT: 3306
+      ENV OM_DB_USER: om_admin
+      ENV OM_DB_PASS: 12345
+      ENV OM_KURENTO_WS_URL: ws://127.0.0.1:8888/kurento
+      ENV OM_DATA_DIR: /opt/omdata
+      ENV work: /opt
+      ENV OM_HOME: /opt/openmeetings
+      ENV MYSQL_J_VER: 8.0.15
+      ENV DB2_J_VER: 11.1.4.4
+      ENV PORTS: 5443
+      
+    
+
